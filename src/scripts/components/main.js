@@ -1,18 +1,18 @@
 'use strict';
 
-var App = require('./App');
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
+import App from './App';
+import React from 'react';
+import Router from 'react-router';
+let Route = Router.Route;
 
 // React dev tools
 if (typeof window !== 'undefined') {
   window.react = React;
 }
 
-var content = document.getElementById('content');
+let content = document.getElementById('content');
 
-var Routes = (
+let Routes = (
   <Route handler={App}>
     <Route name="/" handler={App}/>
   </Route>
