@@ -28,6 +28,7 @@ $RECYCLE.BIN/
 # App specific
 
 node_modules/
+bower_components/
 .tmp
 dist
 /src/scripts/main.js
