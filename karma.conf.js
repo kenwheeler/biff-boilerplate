@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'sinon-chai'],
     files: [
       'test/helpers/**/*.js',
       'test/spec/components/**/*.js'
@@ -29,7 +29,7 @@ module.exports = function (config) {
           test: /\.js$/,
           loader: 'babel-loader'
         }, {
-          test: /\.sass/,
+          test: /\.scss/,
           loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
         }, {
           test: /\.css$/,
@@ -69,7 +69,14 @@ module.exports = function (config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: ['PhantomJS'],
-    reporters: ['progress'],
+    reporters: ['mocha'],
+    plugins: [
+      require('karma-mocha'),
+      require('karma-mocha-reporter'),
+      require('karma-phantomjs-launcher'),
+      require('karma-sinon-chai'),
+      require('karma-webpack')
+    ],
     captureTimeout: 60000,
     singleRun: true
   });

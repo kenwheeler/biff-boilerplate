@@ -42,7 +42,7 @@ module.exports = {
       exclude: [/bower_components/, /node_modules/],
       loader: 'react-hot!babel-loader'
     }, {
-      test: /\.sass/,
+      test: /\.scss/,
       loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
     }, {
       test: /\.css$/,

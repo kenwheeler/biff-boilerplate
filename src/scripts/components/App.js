@@ -14,9 +14,9 @@ import Immutable from 'immutable';
 const ReactTransitionGroup = React.addons.TransitionGroup;
 
 require('../../styles/normalize.css');
-require('../../styles/main.css');
 require('bootstrap/dist/css/bootstrap.min.css');
 require('fontawesome/css/font-awesome.css');
+require('../../styles/main.scss');
 
 let App = React.createClass({
   propTypes: {

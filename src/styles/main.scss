@@ -1,0 +1,70 @@
+/* main */
+
+.main {
+  position: relative;
+  top: 100px;
+  width: 400px;
+  height: 100%;
+  padding: 30px 30px 10px 30px;
+  background: #efefef;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+  margin: auto;
+  color: black;
+  .glyphicon {
+    top: 2px;
+  }
+}
+
+/* transitions */
+
+.fade-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+  &.fade-enter-active {
+    opacity: 1;
+  }
+}
+
+.fade-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+  &.fade-leave-active {
+    opacity: 0.01;
+  }
+}
+
+/* spinner */
+
+.spinner {
+  display: inline-block;
+  opacity: 0;
+  width: 0;
+  color: white;
+  -webkit-transition: opacity 0.25s, width 0.25s;
+  -moz-transition: opacity 0.25s, width 0.25s;
+  -o-transition: opacity 0.25s, width 0.25s;
+  transition: opacity 0.25s, width 0.25s;
+}
+
+.has-spinner {
+  &.active {
+    cursor: progress;
+    .spinner {
+      opacity: 1;
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+  &.btn-mini.active .spinner {
+    width: 10px;
+  }
+  &.btn-small.active .spinner {
+    width: 13px;
+  }
+  &.btn.active .spinner {
+    width: 16px;
+  }
+  &.btn-large.active .spinner {
+    width: 19px;
+  }
+}

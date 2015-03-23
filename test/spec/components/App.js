@@ -1,19 +1,28 @@
 'use strict';
 
-describe('Main', function () {
+describe('App', function () {
+
   var React = require('react/addons');
-  var App, component;
 
-  beforeEach(function () {
-    var container = document.createElement('div');
-    container.id = 'content';
-    document.body.appendChild(container);
+  var App, container, component;
 
+  beforeEach(function() {
     App = require('components/App.js');
-    component = React.createElement(App);
+    container = document.createElement('div');
+    component = React.render(
+        React.createElement(App),
+        container
+    );
   });
 
-  it('should create a new instance of App', function () {
-    expect(component).toBeDefined();
+  afterEach(function() {
+    React.unmountComponentAtNode(container);
   });
+
+  it('should render into the document', function() {
+      expect(component.isMounted()).to.be.true;
+  });
+
 });
+
+
